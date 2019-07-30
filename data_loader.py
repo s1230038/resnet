@@ -38,6 +38,7 @@ def get_data_loaders(data_dir,
     """
     
     # Load the datasets
+    '''
     train_dataset = datasets.CIFAR10(
         root=data_dir, train=True,
         download=True, transform=train_transform,
@@ -47,6 +48,21 @@ def get_data_loaders(data_dir,
         root=data_dir, train=False,
         download=True, transform=test_transform,
     )
+    '''
+    data_transform = transforms.Composea([
+        transforms.Resize((32,32))
+    ])
+    full_Dataset =ImageFolder(root=data_dir, transform=data_transform)
+    train_size = int(0.5 * len(full_Dataset))
+    test_size = len(full_Dataset) - train_size
+    train_dataset, test_dataset= torch.utils.data.random_split(
+       full_Dataset, [train_size, test_size]
+    )
+    print(data_dir)
+    print("full_Dataset: "  + len(full_Dataset))
+    print("train_dataset: " + len(train_dataset))
+    print("test_dataset:"   + len(test_dataset))
+
     
     # Create loader objects
     train_loader = torch.utils.data.DataLoader(
