@@ -56,11 +56,11 @@ def get_data_loaders(data_dir,
     train_size = int(0.8 * len(full_dataset_forTrain))
     test_size = len(full_dataset_forTrain) - train_size
     torch.manual_seed(torch.initial_seed())
-    train_dataset, = torch.utils.data.random_split(
+    train_dataset, _ = torch.utils.data.random_split(
        full_dataset_forTrain, [train_size, test_size]
     )
     torch.manual_seed(torch.initial_seed())
-    , test_dataset = torch.utils.data.random_split(
+    _, test_dataset = torch.utils.data.random_split(
        full_dataset_forTest, [train_size, test_size]
     )
     print(data_dir)
@@ -106,8 +106,78 @@ def plot_images(images, cls_true, cls_pred=None):
     '''
     label_names = [
         'U3042',
+        'U3044',
+        'U3046',
+        'U3048',
+        'U304A',
+        'U304B',
+        'U304C',
         'U304D',
-        'U3054'
+        'U304E',
+        'U304F',
+        'U3050',
+        'U3051',
+        'U3052',
+        'U3053',
+        'U3054',
+        'U3055',
+        'U3056',
+        'U3057',
+        'U3058',
+        'U3059',
+        'U305A',
+        'U305B',
+        'U305C',
+        'U305D',
+        'U305E',
+        'U305F',
+        'U3060',
+        'U3061',
+        'U3062',
+        'U3064',
+        'U3065',
+        'U3066',
+        'U3067',
+        'U3068',
+        'U3069',
+        'U306A',
+        'U306B',
+        'U306C',
+        'U306D',
+        'U306E',
+        'U306F',
+        'U3070',
+        'U3071',
+        'U3072',
+        'U3073',
+        'U3074',
+        'U3075',
+        'U3076',
+        'U3077',
+        'U3078',
+        'U3079',
+        'U307A',
+        'U307B',
+        'U307C',
+        'U307D',
+        'U307E',
+        'U307F',
+        'U3080',
+        'U3081',
+        'U3082',
+        'U3084',
+        'U3086',
+        'U3088',
+        'U3089',
+        'U308A',
+        'U308B',
+        'U308C',
+        'U308D',
+        'U308F',
+        'U3090',
+        'U3091',
+        'U3092',
+        'U3093'
     ]
     
     fig, axes = plt.subplots(3, 3)
