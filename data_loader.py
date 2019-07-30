@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import torch
 from torchvision import datasets
 from torchvision import transforms
+from torchvision.datasets.folder import ImageFolder
 from torch.utils.data.sampler import SubsetRandomSampler
 
 
@@ -49,7 +50,7 @@ def get_data_loaders(data_dir,
         download=True, transform=test_transform,
     )
     '''
-    data_transform = transforms.Composea([
+    data_transform = transforms.Compose([
         transforms.Resize((32,32))
     ])
     full_Dataset =ImageFolder(root=data_dir, transform=data_transform)
@@ -59,9 +60,9 @@ def get_data_loaders(data_dir,
        full_Dataset, [train_size, test_size]
     )
     print(data_dir)
-    print("full_Dataset: "  + len(full_Dataset))
-    print("train_dataset: " + len(train_dataset))
-    print("test_dataset:"   + len(test_dataset))
+    print("full_Dataset: "  + str(len(full_Dataset)) )
+    print("train_dataset: " + str(len(train_dataset)) )
+    print("test_dataset:"   + str(len(test_dataset)) )
 
     
     # Create loader objects
