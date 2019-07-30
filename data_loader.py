@@ -50,17 +50,21 @@ def get_data_loaders(data_dir,
         download=True, transform=test_transform,
     )
     '''
-    data_transform = transforms.Compose([
-        transforms.Resize((32,32))
-    ])
-    full_Dataset =ImageFolder(root=data_dir, transform=data_transform)
-    train_size = int(0.5 * len(full_Dataset))
-    test_size = len(full_Dataset) - train_size
-    train_dataset, test_dataset= torch.utils.data.random_split(
-       full_Dataset, [train_size, test_size]
+    full_dataset_forTrain =ImageFolder(root=data_dir, transform=train_transform)
+    full_dataset_forTest =ImageFolder(root=data_dir, transform=test_transform)
+    
+    train_size = int(0.8 * len(full_dataset_forTrain))
+    test_size = len(full_dataset_forTrain) - train_size
+    torch.manual_seed(torch.initial_seed())
+    train_dataset, = torch.utils.data.random_split(
+       full_dataset_forTrain, [train_size, test_size]
+    )
+    torch.manual_seed(torch.initial_seed())
+    , test_dataset = torch.utils.data.random_split(
+       full_dataset_forTest, [train_size, test_size]
     )
     print(data_dir)
-    print("full_Dataset: "  + str(len(full_Dataset)) )
+    print("full_data: "  + str(len(full_dataset_forTrain)) )
     print("train_dataset: " + str(len(train_dataset)) )
     print("test_dataset:"   + str(len(test_dataset)) )
 
