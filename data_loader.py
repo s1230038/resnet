@@ -85,6 +85,7 @@ def plot_images(images, cls_true, cls_pred=None):
     """
     
     # CIFAR10 labels
+    '''
     label_names = [
         'airplane',
         'automobile',
@@ -96,6 +97,12 @@ def plot_images(images, cls_true, cls_pred=None):
         'horse',
         'ship',
         'truck'
+    ]
+    '''
+    label_names = [
+        'U3042',
+        'U304D',
+        'U3054'
     ]
     
     fig, axes = plt.subplots(3, 3)
