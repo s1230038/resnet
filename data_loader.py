@@ -55,11 +55,11 @@ def get_data_loaders(data_dir,
     
     train_size = int(0.8 * len(full_dataset_forTrain))
     test_size = len(full_dataset_forTrain) - train_size
-    torch.manual_seed(torch.initial_seed())
+    torch.manual_seed(0)
     train_dataset, _ = torch.utils.data.random_split(
        full_dataset_forTrain, [train_size, test_size]
     )
-    torch.manual_seed(torch.initial_seed())
+    torch.manual_seed(0)
     _, test_dataset = torch.utils.data.random_split(
        full_dataset_forTest, [train_size, test_size]
     )
