@@ -50,7 +50,8 @@ def train(model, epochs, train_loader, test_loader, criterion,
     """
     
     # Run on GPU if available
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    device = "cpu" # Forced to use CPU to investigate the runtime error
     print(device)
     model.to(device)
     
