@@ -129,7 +129,8 @@ class ResNet(nn.Module):
         # pooling as implemented below results in better results and also
         # better matches the total model parameter count cited by authors.
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
-        self.fcOut   = nn.Linear(64, 10, bias=True)
+        # self.fcOut   = nn.Linear(64, 10, bias=True)
+        self.fcOut   = nn.Linear(64, 73, bias=True) # For Hiragana
         self.softmax = nn.LogSoftmax(dim=-1)
         
         # Initilise weights in fully connected layer 
