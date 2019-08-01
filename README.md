@@ -6,7 +6,7 @@ Original Repository: https://github.com/a-martyn/resnet
 
 Hiragana Dataset: https://lab.ndl.go.jp/cms/hiragana73
 
-## Getting Started
+## Getting Started (based on the original repository)
 
 ### Prequesites
 
@@ -19,7 +19,7 @@ Hiragana Dataset: https://lab.ndl.go.jp/cms/hiragana73
 Clone this repo:
 
 ```
-git clone https://github.com/a-martyn/resnet.git
+git clone https://github.com/s1230038/resnet.git
 cd resnet
 ```
 
