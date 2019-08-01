@@ -1,8 +1,9 @@
 # Classification of Hiragana with ResNet
 
-This is 
+This is the class project in the master program of the university of Aizu.
 
 Original Repository: https://github.com/a-martyn/resnet
+
 Hiragana Dataset: https://lab.ndl.go.jp/cms/hiragana73
 
 ## Getting Started
