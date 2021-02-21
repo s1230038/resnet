@@ -6,6 +6,9 @@ Original Repository: https://github.com/a-martyn/resnet
 
 Hiragana Dataset: https://lab.ndl.go.jp/cms/hiragana73
 
+## Overview 
+See the m5231142_report.pptx to overview the project background and results.
+
 ## Getting Started (based on the original repository)
 
 ### Prequesites
